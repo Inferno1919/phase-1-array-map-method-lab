@@ -12,5 +12,26 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(sentence => {
+    //single sentence called sentence
+    //capitalize first letter of each sentence
+    let newString = ""
+    //step one colon split string into words
+    let wordArray = sentence.split(' ');
+    //setp two colon cap first letter of each word
+    wordArray = wordArray.map(word => word[0].toUpperCase() + word.slice(1));
+    //sep 3 cln mash together
+    wordArray.forEach(word =>{
+    
+      newString = newString +  " " + word;
+    })
+    
+    newString = newString.slice(1);
+  
+    return newString;
+    //return a string with the first letter of each word capped
+  });
 }
+
+
+
